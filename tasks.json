@@ -1,0 +1,85 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run Black (Current File)",
+            "type": "shell",
+            "command": "black ${file}",
+            "detail": "Reformats code on the current file.",
+            "icon": {
+                "id": "code"
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false,
+                "close": false
+            }
+        },
+        {
+            "label": "Run Black (Selection)",
+            "type": "shell",
+            "command": "black --code '${selectedText}'",
+            "detail": "Reformats selected code and output to the console.",
+            "icon": {
+                "id": "code"
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false,
+                "close": false
+            }
+        },
+        {
+            "label": "Run Black (Current Directory)",
+            "type": "shell",
+            "command": "black '${relativeFileDirname}'",
+            "detail": "Reformats code on all files in the current directory.",
+            "icon": {
+                "id": "code"
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false,
+                "close": false
+            }
+        },
+        {
+            "label": "Run All Test Suites",
+            "type": "shell",
+            "command": "pytest",
+            "detail": "Runs all tests suites.",
+            "icon": {
+                "id": "beaker"
+            },
+            "options": {
+                "env": {
+                    "PYTHONPATH": "${workspaceFolder}"
+                }
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true,
+                "close": false
+            },
+            "problemMatcher": []
+        }
+    ]
+}
