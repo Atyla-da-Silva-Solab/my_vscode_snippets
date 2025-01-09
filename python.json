@@ -48,5 +48,20 @@
 			"\t\tpass\n",
 		],
 		"description": "Defines a new Abstract Base Class"
+	},
+
+	"Import Dataclass Decorator": {
+		"prefix": "datac",
+		"description": "Declares a dataclass",
+		"body": [
+			"from dataclasses import dataclass\n\n",
+			"@dataclass(init=True, repr=True, eq=True, order=False, unsafe_hash=False, frozen=False, match_args=True, kw_only=False, slots=False, weakref_slot=False)",
+			"class ${1:ClassName}():",
+			"\t${2:field1}: ${3:str}",
+			"\t${4:field2}: ${5:int}",
+			"\t${6:field3}: ${7:list[str]}",
+			"\t${8:field4}: ${9:dict[str, str]}",
+			"\t${10:field5}: ${11:tuple[str, ...]}\n",
+		]
 	}
 }
